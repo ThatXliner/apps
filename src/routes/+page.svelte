@@ -1,5 +1,6 @@
 <script>
-	const apps = import.meta.glob('./*/+page.svelte');
+	import { base } from '$app/paths';
+	const apps = ['spelltestr'];
 </script>
 
 <div class="hero min-h-screen bg-base-100">
@@ -7,10 +8,10 @@
 		<div class="max-w-md space-y-6">
 			<h1 class="text-5xl font-bold">Available Apps</h1>
 			<ul class="menu bg-base-200">
-				{#each Object.keys(apps) as app}
+				{#each apps as app}
 					<li>
-						<a href={app.replace('/+page.svelte', '')}>
-							<span class="mr-auto">{app.replace('./', '').replace('/+page.svelte', '')}</span>
+						<a href={`${base}/app`}>
+							<span class="mr-auto">{app}</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
