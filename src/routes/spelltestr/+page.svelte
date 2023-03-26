@@ -1,6 +1,7 @@
 <script>
 	import { spelltestr } from '$lib/stores';
 	import Input from './Input.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <div class="flex justify-center flex-col min-h-screen bg-base-200 text-center">
@@ -48,7 +49,7 @@
 	<button
 		on:click={() => {
 			$spelltestr.responses = {};
-			window.location.href = 'spelltestr/test';
+			window.location.href = `${base}/spelltestr/test`;
 		}}
 		disabled={$spelltestr.wordlist.length === 0}
 		class="mx-auto w-fit btn btn-primary">Start test</button

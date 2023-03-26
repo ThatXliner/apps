@@ -3,6 +3,7 @@
 	import { getExampleOrDefinition } from '../dictionary';
 	import { shuffle } from 'lodash-es';
 	import InputGroup from '$lib/InputGroup.svelte';
+	import { base } from '$app/paths';
 	let words = shuffle($spelltestr.wordlist);
 	function speak(message: string) {
 		if ('speechSynthesis' in window) {
@@ -25,7 +26,7 @@
 
 {#if words.length === 0}
 	<p>Ya got no words</p>
-	<a class="btn btn-primary" href="/spelltestr">go home</a>
+	<a class="btn btn-primary" href={`${base}/spelltestr`}>go home</a>
 {:else}
 	<p>Currently at word {currentWord + 1}/{words.length}</p>
 	<button class="btn btn-primary" on:click={() => speak(word)}>Word</button>

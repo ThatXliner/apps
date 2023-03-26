@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { spelltestr } from '$lib/stores';
+	import { base } from '$app/paths';
 	$: grade =
 		(Object.entries($spelltestr.responses).filter(([k, v]) => k == v).length /
 			Object.keys($spelltestr.responses).length) *
@@ -59,5 +60,5 @@
 	That's {letterGrade[0] == 'A' ? 'an' : 'a'}
 	{letterGrade}
 </p>
-<a href="/" class="btn btn-primary">Go back to apps</a>
-<a href="/spelltestr" class="btn btn-primary">Go back to spelltestr</a>
+<a href={base} class="btn btn-primary">Go back to apps</a>
+<a href={`${base}/spelltestr`} class="btn btn-primary">Go back to spelltestr</a>
