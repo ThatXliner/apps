@@ -10,7 +10,7 @@
 			<ul class="menu bg-base-200">
 				{#each apps as app}
 					<li>
-						<a href={`${base}/app`}>
+						<a href={`${base}/${app}`}>
 							<span class="mr-auto">{app}</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
