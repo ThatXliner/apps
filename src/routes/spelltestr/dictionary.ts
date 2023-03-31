@@ -1,11 +1,12 @@
 import { htmlToText } from './utils';
 const BASE = `https://en.wiktionary.org/api/rest_v1`;
+const USER_AGENT = 'spelltestr/1.0 bryan.hu.2020@gmail.com';
 export async function isWord(word: string): Promise<boolean> {
 	// https://en.wiktionary.org/w/api.php?action=query&prop=raw&titles=Earth&format=json
 	// https://en.wiktionary.org/w/api.php?action=query&prop=info&titles=Earth&format=json
 	return await fetch(`${BASE}/page/title/${word.replace(' ', '_')}`, {
 		method: 'GET',
-		headers: { 'Api-User-Agent': 'spelltestr/1.0 bryan.hu.2020@gmail.com' }
+		headers: { 'Api-User-Agent': USER_AGENT }
 	})
 		.then((res) => res.json())
 		.then(
@@ -29,7 +30,7 @@ type ApiResponse = {
 export async function getWord(word: string): Promise<ApiResponse> {
 	return await fetch(`${BASE}/page/definition/${word.replace(' ', '_')}`, {
 		method: 'GET',
-		headers: { 'Api-User-Agent': 'spelltestr/1.0 bryan.hu.2020@gmail.com' }
+		headers: { 'Api-User-Agent': USER_AGENT }
 	}).then((res) => res.json());
 }
 
