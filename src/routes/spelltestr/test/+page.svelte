@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { spelltestr } from '$lib/stores';
 	import { getExampleOrDefinition } from '../dictionary';
+	import { normalizeWord } from '../utils';
 	import { shuffle } from 'lodash-es';
 	import InputGroup from '$lib/InputGroup.svelte';
 	import { base } from '$app/paths';
@@ -51,7 +52,7 @@
 	<InputGroup
 		buttonText="Submit"
 		on:submit={(event) => {
-			$spelltestr.responses[word] = event.detail;
+			$spelltestr.responses[word] = normalizeWord(event.detail);
 			currentWord++;
 			if (currentWord == words.length) {
 				window.location.href = './results';

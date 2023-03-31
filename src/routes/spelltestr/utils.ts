@@ -1,5 +1,8 @@
 export function normalizeWord(word: string): string {
-	return word.toLowerCase().replace(/[^a-zA-Z]+/g, '');
+	return word
+		.toLowerCase()
+		.replace(/[^a-zA-Z ]+/g, '')
+		.replace(/\s+/g, ' ');
 }
 
 export function htmlToText(html: string): string {
