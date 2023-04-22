@@ -57,7 +57,7 @@
 	</span>
 </p>
 <p class="text-3xl">
-	That's {letterGrade[0] == 'A' ? 'an' : 'a'}
+	That's {letterGrade[0] == 'A' || letterGrade[0] == 'F' ? 'an' : 'a'}
 	{letterGrade}
 </p>
 <a href={base} class="btn btn-primary">Go back to apps</a>
