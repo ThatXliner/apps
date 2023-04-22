@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	const apps = ['spelltestr'];
+	const apps = ['spelltestr', 'saisir'];
 </script>
 
 <div class="hero min-h-screen bg-base-100">
