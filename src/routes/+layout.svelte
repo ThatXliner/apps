@@ -9,5 +9,6 @@
 	const options = {};
 </script>
 
+<svelte:head><meta name="apple-mobile-web-app-capable" content="yes" /></svelte:head>
 <SvelteToast {options} />
 <slot />
