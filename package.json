@@ -39,7 +39,7 @@
 		"typescript": "^4.9.3",
 		"unocss": "^0.50.4",
 		"unocss-preset-daisy": "^2.0.0",
-		"vite": "^4.0.0",
+		"vite": "^4.1.5",
 		"vitest": "^0.25.3"
 	},
 	"type": "module"
