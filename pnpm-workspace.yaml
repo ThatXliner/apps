@@ -1,6 +1,7 @@
-allowBuilds:
-  '@sveltejs/kit': set this to true or false
-  esbuild: set this to true or false
-  svelte-preprocess: set this to true or false
 overrides:
   "undici": "^6.29.1"
+
+allowBuilds:
+  "@sveltejs/kit": true
+  esbuild: true
+  svelte-preprocess: true
